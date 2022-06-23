@@ -1,8 +1,51 @@
-import os, math
+# import os, math
+# # import urllib.request
+# #Import the required Libraries
+# from tkinter import *
+# from tkinter import ttk
+# #Create an instance of Tkinter frame
+# win = Tk()
+# #Set the geometry of the Tkinter frame
+# win.geometry("775x450")
+
+# #Define a function to update the entry widget
+# def entry_update(text):
+#    # entry.delete(0,END)
+#    entry.insert(0,text)
+
+# #Create an Entry Widget
+# entry= Entry(win, width= 30, bg= "white")
+# entry.pack(pady=10)
+
+# #Create Multiple Buttons with different commands
+# button_dict={}
+# number= ["9", "8", "7", "6"]
+# oper=[" /", " X", " -", " +"]
+
+# for i in number:
+#    def func(x=i):
+#       return entry_update(x)      
+#    button_dict[i]=ttk.Button(win, text=i, command= func)
+#    button_dict[i].pack()
+# for i in oper:
+#   def func(x=i):
+#     return entry_update(x)
+#   button_dict[i]=ttk.Button(win, text=i, command= func)
+#   button_dict[i].pack()   
+# # for i in calc:
+# #   def func(x=i):
+# #     return entry_update(x)
+# #   button_dict[i]=ttk.Button(win, text=i, command= func)
+# #   button_dict[i].pack()  
+# win.mainloop()
 
 def buttons(calculator):
     for j in calculator:
       print(*j)
+      
+# image_url = 'https://bit.ly/2XuVzB4' #the image on the web
+# save_name = 'my_image.jpg' #local name to be saved
+# urllib.request.urlretrieve(image_url, save_name)
 
 program=True
 index=1
@@ -36,20 +79,36 @@ while program==True:
       print ("-------------------------")
     except ZeroDivisionError:
       print("Undefined. Dividing by zero")
-  
+
+  #pattern: number, operation, number, operation literally always
+      #for odd numbers make integer, for even numbers make string
+      
+#       if int(input("placeholdeR")) % 2 != 0:
+#         for num in range(start, end + 1, 2):
+#         print(num, end=" ")
+# else:
+ 
+#     for num in range(start+1, end + 1, 2):
+#         print(num, end=" ")
   try:
-    choice1,operation,choice2 = list(input("Enter Equation: ").split())
-    choice1 = int(choice1)
-    choice2 = int(choice2)
+    # choice1,operation,choice2
+    inputs = list(input("Enter Equation: ").split())
+    choices = inputs[::2]
+    operation = inputs[1::2]
+    choice1 = int(choices[0])
+    choice2 = int(choices[1])
+    #when user gives input, it will add a space after so it works
+    #if C is pressed, os.system('clear')
   except Exception as e:
     print(e)
-  
+
+    
   # assert operation.lower() == "x" 
   if operation == "+":
     add()
   if operation == "-":
     subtract()
-  if operation.lower() == "x":
+  if operation == "x" or "X":
     multiply()
   if operation == "/":
     divide()
