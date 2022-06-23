@@ -1,47 +1,68 @@
 import os, math
 
-# print("   " + "|" + "   " + "|" + "   ")
 def buttons(list):
     for j in list:
       print(*j)
-    # for i in list:
-    #     # prints all elements in each list i 
-    #     print(*i)
-    # return(list)
 
-index=0
+program=True
+index=1
 list = [ ["-------------------------"], ["|", "                     ", "|"], ["-------------------------"], ["|", " C " , "|", " ± ", "|", " % ", "|", " / ", "|"], ["-------------------------"], ["|", " 7 ", "|", " 8 ", "|", " 9 ", "|", " x ", "|"],["-------------------------"], ["|", " 4 ", "|", " 5 ", "|", " 6 ", "|", " - ", "|"], ["-------------------------"], ["|", " 1 ", "|", " 2 ", "|", " 3 ", "|", " + ", "|"], ["-------------------------"], ["|", "", " 0  ", "|", "  .  ", "|", "  =  ", "|"], ["-------------------------"] ]
 buttons(list)
 
-def add():
-  sum = choice1 + choice2
-  print(sum)
-
-def subtract():
-  difference = choice1 - choice2
-  print(difference)
-
-def multiply():
-  product = choice1 * choice2
-  print(product)
-
-def divide():
-  quotient = choice1 / choice2
-  print(quotient)
-
-choice1 = int(input("\n" + "First Number: "))
-operation = input("\n" + "What Operation? ")
-choice2 = int(input("\n" + "Second Number: "))
-
-# assert operation.lower() == "x" 
-if operation == "+":
-  add()
-if operation == "-":
-  subtract()
-if operation.lower() == "x":
-  multiply()
-if operation == "/":
-  divide()
+while program==True:
+  def add():
+    global index
+    sum = choice1 + choice2
+    print ("\n" + "Your answer is" + "\n" + "-------------------------") #indenting lines due to being unable to concatenate int
+    print(sum)
+    print ("-------------------------")
+    index=index-1
+    
+  def subtract():
+    global index
+    difference = choice1 - choice2
+    print ("\n" + "Your answer is" + "\n" + "-------------------------")
+    print(difference)
+    print ("-------------------------")
+    index=index-1
+  
+  def multiply():
+    global index
+    product = choice1 * choice2
+    print ("\n" + "Your answer is" + "\n" + "-------------------------")
+    print(product)
+    print("-------------------------")
+    index=1
+  
+  def divide():
+    try: 
+      global index
+      quotient = choice1 / choice2
+      index=1
+      print ("\n" + "Your answer is" + "\n" + "-------------------------")
+      print(quotient)
+      print ("-------------------------")
+    except ZeroDivisionError:
+      print("Undefined. Dividing by zero")
+  
+  while index==1:
+    try:
+      choice1 = int(input("\n" + "First Number: "))
+      operation = input("\n" + "What Operation? ")
+      choice2 = int(input("\n" + "Second Number: "))
+      index=index+1
+    except Exception as e:
+      print(e)
+  
+  # assert operation.lower() == "x" 
+  if operation == "+":
+    add()
+  if operation == "-":
+    subtract()
+  if operation.lower() == "x":
+    multiply()
+  if operation == "/":
+    divide()
 
 # if argument == "%":
 #   choice1/10
