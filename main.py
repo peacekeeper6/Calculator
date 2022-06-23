@@ -28,12 +28,12 @@ def multiply():
 def divide():
   quotient = choice1 / choice2
   print(quotient)
-  
+
 choice1 = int(input("\n" + "First Number: "))
 operation = input("\n" + "What Operation? ")
 choice2 = int(input("\n" + "Second Number: "))
 
-assert operation.lower() == "x" 
+# assert operation.lower() == "x" 
 if operation == "+":
   add()
 if operation == "-":
@@ -42,6 +42,9 @@ if operation.lower() == "x":
   multiply()
 if operation == "/":
   divide()
+
+# if argument == "%":
+#   choice1/10
 
 # try:
 #     global index
