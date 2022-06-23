@@ -1,58 +1,48 @@
 import os, math
 
-def buttons(list):
-    for j in list:
+def buttons(calculator):
+    for j in calculator:
       print(*j)
 
 program=True
 index=1
-list = [ ["-------------------------"], ["|", "                     ", "|"], ["-------------------------"], ["|", " C " , "|", " ± ", "|", " % ", "|", " / ", "|"], ["-------------------------"], ["|", " 7 ", "|", " 8 ", "|", " 9 ", "|", " x ", "|"],["-------------------------"], ["|", " 4 ", "|", " 5 ", "|", " 6 ", "|", " - ", "|"], ["-------------------------"], ["|", " 1 ", "|", " 2 ", "|", " 3 ", "|", " + ", "|"], ["-------------------------"], ["|", "", " 0  ", "|", "  .  ", "|", "  =  ", "|"], ["-------------------------"] ]
-buttons(list)
+calculator = [ ["-------------------------"], ["|", "                     ", "|"], ["-------------------------"], ["|", " C " , "|", " ± ", "|", " % ", "|", " / ", "|"], ["-------------------------"], ["|", " 7 ", "|", " 8 ", "|", " 9 ", "|", " x ", "|"],["-------------------------"], ["|", " 4 ", "|", " 5 ", "|", " 6 ", "|", " - ", "|"], ["-------------------------"], ["|", " 1 ", "|", " 2 ", "|", " 3 ", "|", " + ", "|"], ["-------------------------"], ["|", "", " 0  ", "|", "  .  ", "|", "  =  ", "|"], ["-------------------------"] ]
+buttons(calculator)
 
 while program==True:
   def add():
-    global index
     sum = choice1 + choice2
     print ("\n" + "Your answer is" + "\n" + "-------------------------") #indenting lines due to being unable to concatenate int
     print(sum)
     print ("-------------------------")
-    index=index-1
     
   def subtract():
-    global index
     difference = choice1 - choice2
     print ("\n" + "Your answer is" + "\n" + "-------------------------")
     print(difference)
     print ("-------------------------")
-    index=index-1
   
   def multiply():
-    global index
     product = choice1 * choice2
     print ("\n" + "Your answer is" + "\n" + "-------------------------")
     print(product)
     print("-------------------------")
-    index=1
   
   def divide():
     try: 
-      global index
       quotient = choice1 / choice2
-      index=1
       print ("\n" + "Your answer is" + "\n" + "-------------------------")
       print(quotient)
       print ("-------------------------")
     except ZeroDivisionError:
       print("Undefined. Dividing by zero")
   
-  while index==1:
-    try:
-      choice1 = int(input("\n" + "First Number: "))
-      operation = input("\n" + "What Operation? ")
-      choice2 = int(input("\n" + "Second Number: "))
-      index=index+1
-    except Exception as e:
-      print(e)
+  try:
+    choice1,operation,choice2 = list(input("Enter Equation: ").split())
+    choice1 = int(choice1)
+    choice2 = int(choice2)
+  except Exception as e:
+    print(e)
   
   # assert operation.lower() == "x" 
   if operation == "+":
