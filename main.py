@@ -15,7 +15,7 @@ def entry_update(text):
 def entry_calculate():
   global num
   equals = str(eval(num))
-  equals = "{:.6}".format(equals)
+  equals = "{:.20}".format(equals)
   input.set(equals)
   
 win=tkinter.Tk()
