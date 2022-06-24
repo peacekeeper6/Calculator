@@ -1,2 +1,2 @@
-# Calculator-
-Seeing how much python I remember
+# Calculator
+A simple calculator made using the tkinter module in python. 
