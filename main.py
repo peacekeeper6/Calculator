@@ -11,25 +11,7 @@ def entry_delete():
 def entry_update(text):
   global num
   num = num + str(text)
-  entry.insert(999,text) #start from right side
-# def entry_change():
-#   global num
-#   divide = int(2*np.power(num))
-#   input.set(str(divide))
-#   num=""
-  # num = int(num / 100)
-  # num = str(num)
-  # entry.insert(999, num)
-# def entry_sign():
-#   global num
-#   n = int(input[0])
-#   if n > 0:
-#     n = -abs(n)
-#   elif n== 0:
-#     pass
-#   else: 
-#     n = abs(n)
-#   input.set(str(n))
+  entry.insert(999,text) #display text to the right
 def entry_calculate():
   global num
   equals = str(eval(num))
