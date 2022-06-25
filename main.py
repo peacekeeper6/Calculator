@@ -14,13 +14,13 @@ def entry_update(text):
   entry.insert(999,text) #display text to the right
 def entry_calculate():
   global num
-  equals = str(eval(num))
-  equals = "{:.20}".format(equals)
-  input.set(equals)
+  num = str(eval(num))
+  num = "{:.20}".format(num)
+  input.set(num)
   
 win=tkinter.Tk()
 win.title("Calculator")
-win.geometry("725x800")
+win.geometry("815x425")
 
 input=StringVar()
 
