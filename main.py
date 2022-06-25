@@ -20,7 +20,7 @@ def entry_calculate():
   
 win=tkinter.Tk()
 win.title("Calculator")
-win.geometry("815x425")
+win.geometry("850x425")
 
 input=StringVar()
 
